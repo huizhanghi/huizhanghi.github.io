@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页 & AI聊天</title>
+    
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- 引入自定义样式 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#home">首页</a>
+            <a href="#about">关于我</a>
+            <a href="#portfolio">作品展示</a>
+            <a href="#contact">联系方式</a>
+            <a href="#chat">聊天</a>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- 欢迎区域 -->
+    <section id="home" class="welcome-section">
+        <div class="tech-particles"></div>
+        <div class="welcome-content">
+            <h1 class="tech-text">你好，我是张慧</h1>
+            <h2 class="tech-text-2">一名AI算法开发工程师</h2>
+            <div class="cta-buttons">
+                <button onclick="scrollToSection('portfolio')">查看作品</button>
+                <button onclick="scrollToSection('chat')">与我聊天</button>
+            </div>
+        </div>
+    </section>
+
+     <!-- AI聊天区 -->
+     <section id="chat" class="chat-section">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2><i class="fas fa-robot"></i> AI 智能助手</h2>
+                <div class="chat-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">在线</span>
+                </div>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <!-- 初始AI消息 -->
+                <div class="message ai-message">
+                    您好！我是张慧的数字分身，一个专注AI领域的算法开发工程师。拥有AI项目实战经验，期待能与您深入交流~
+                </div>
+            </div>
+            <div class="chat-input">
+                <textarea id="chat-input" placeholder="输入您的问题..."></textarea>
+                <button class="send-btn" id="send-message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品展示区 -->
+    <section id="portfolio" class="portfolio-section">
+        <h2>我的作品</h2>
+        <div class="portfolio-grid">
+            <!-- 作品卡片将通过JavaScript动态生成 -->
+        </div>
+    </section>
+
+    <!-- 底部信息区 -->
+    <footer class="footer">
+        <div class="contact-info">
+            <p><i class="fas fa-phone"></i> 电话：1811837367</p>
+            <p class="wechat-btn"><i class="fab fa-weixin"></i> 微信</p>
+            <p><i class="fas fa-envelope"></i> 邮箱：zhanghuiyjs68@163.com</p>
+        </div>
+        <div class="social-links">
+            <!-- 社交媒体链接 -->
+        </div>
+        <div class="copyright">
+            <p>© 2025 YourName. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 微信二维码模态框 -->
+    <div id="wechatModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="qrcode.png" alt="微信二维码">
+        </div>
+    </div>
+
+    <!-- 引入主脚本 -->
+    <script src="main.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html> 

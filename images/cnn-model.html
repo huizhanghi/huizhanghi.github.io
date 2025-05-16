@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CNN模型可视化</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .model-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      overflow-x: auto;
+    }
+    
+    .layer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 10px;
+    }
+    
+    .layer-title {
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .conv {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      border-radius: 5px;
+      position: relative;
+    }
+    
+    .conv::after {
+      content: "Conv";
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 10px;
+      color: #333;
+    }
+    
+    .pooling {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      border-radius: 5px;
+      position: relative;
+    }
+    
+    .pooling::after {
+      content: "Pool";
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 10px;
+      color: #333;
+    }
+    
+    .fc {
+      width: 80px;
+      height: 25px;
+      background: linear-gradient(135deg, #ff5858 0%, #f09819 100%);
+      border-radius: 5px;
+      position: relative;
+    }
+    
+    .fc::after {
+      content: "FC";
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 10px;
+      color: #333;
+    }
+    
+    .input {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #A3A1FF 0%, #3A3897 100%);
+      border-radius: 5px;
+    }
+    
+    .output {
+      width: 15px;
+      height: 60px;
+      background: linear-gradient(135deg, #FC5C7D 0%, #6A82FB 100%);
+      border-radius: 5px;
+    }
+    
+    .arrow {
+      width: 15px;
+      height: 2px;
+      background-color: #888;
+      position: relative;
+    }
+    
+    .arrow::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -3px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid #888;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="model-container">
+    <div class="layer">
+      <div class="layer-title">输入</div>
+      <div class="input"></div>
+    </div>
+    
+    <div class="arrow"></div>
+    
+    <div class="layer">
+      <div class="layer-title">卷积层1</div>
+      <div class="conv"></div>
+    </div>
+    
+    <div class="arrow"></div>
+    
+    <div class="layer">
+      <div class="layer-title">池化层1</div>
+      <div class="pooling"></div>
+    </div>
+    
+    <div class="arrow"></div>
+    
+    <div class="layer">
+      <div class="layer-title">卷积层2</div>
+      <div class="conv"></div>
+    </div>
+    
+    <div class="arrow"></div>
+    
+    <div class="layer">
+      <div class="layer-title">池化层2</div>
+      <div class="pooling"></div>
+    </div>
+    
+    <div class="arrow"></div>
+    
+    <div class="layer">
+      <div class="layer-title">全连接层1</div>
+      <div class="fc"></div>
+    </div>
+    
+    <div class="arrow"></div>
+    
+    <div class="layer">
+      <div class="layer-title">全连接层2</div>
+      <div class="fc"></div>
+    </div>
+    
+    <div class="arrow"></div>
+    
+    <div class="layer">
+      <div class="layer-title">输出</div>
+      <div class="output"></div>
+    </div>
+  </div>
+</body>
+</html> 
